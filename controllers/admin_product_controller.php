@@ -24,6 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Common Fields
     $name_en = $_POST['name_en'];
     $name_id = $_POST['name_id'];
+    $youtube_url = $_POST['youtube_url'] ?? null;
     $desc_en = $_POST['description_en'];
     $desc_id = $_POST['description_id'];
     $price = $_POST['price'];
@@ -72,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
         
         $sql = "INSERT INTO products (
-            name_en, name_id, description_en, description_id, price, type, image, 
+            name_en, name_id, youtube_url, description_en, description_id, price, type, image, 
             duration, itinerary_en, itinerary_id, facilities_en, facilities_id, policy_en, policy_id, 
             latitude, longitude,
             tagline_en, tagline_id, event_date, event_end_date, meeting_point_en, meeting_point_id, 
@@ -80,7 +81,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             opening_hours_en, opening_hours_id, address_en, address_id, exclusions_en, exclusions_id, 
             terms_en, terms_id, contact_phone, contact_email
         ) VALUES (
-            ?, ?, ?, ?, ?, ?, ?, 
+            ?, ?, ?, ?, ?, ?, ?, ?, 
             ?, ?, ?, ?, ?, ?, ?, 
             ?, ?,
             ?, ?, ?, ?, ?, ?, 
@@ -91,7 +92,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $stmt = $pdo->prepare($sql);
         $stmt->execute([
-            $name_en, $name_id, $desc_en, $desc_id, $price, $type, $image,
+            $name_en, $name_id, $youtube_url, $desc_en, $desc_id, $price, $type, $image,
             $duration, $itinerary_en, $itinerary_id, $facilities_en, $facilities_id, $policy_en, $policy_id,
             $latitude, $longitude,
             $tagline_en, $tagline_id, $event_date, $event_end_date, $meeting_point_en, $meeting_point_id,
@@ -124,7 +125,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } 
     elseif ($action === 'update') {
         $sql = "UPDATE products SET 
-            name_en=?, name_id=?, description_en=?, description_id=?, price=?, type=?, 
+            name_en=?, name_id=?, youtube_url=?, description_en=?, description_id=?, price=?, type=?, 
             duration=?, itinerary_en=?, itinerary_id=?, facilities_en=?, facilities_id=?, policy_en=?, policy_id=?, 
             latitude=?, longitude=?,
             tagline_en=?, tagline_id=?, event_date=?, event_end_date=?, meeting_point_en=?, meeting_point_id=?, 
@@ -134,7 +135,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         ";
         
         $params = [
-            $name_en, $name_id, $desc_en, $desc_id, $price, $type,
+            $name_en, $name_id, $youtube_url, $desc_en, $desc_id, $price, $type,
             $duration, $itinerary_en, $itinerary_id, $facilities_en, $facilities_id, $policy_en, $policy_id,
             $latitude, $longitude,
             $tagline_en, $tagline_id, $event_date, $event_end_date, $meeting_point_en, $meeting_point_id,

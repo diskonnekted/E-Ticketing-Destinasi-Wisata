@@ -35,3 +35,16 @@ function redirect($path) {
 function asset($path) {
     return $path; // In root deployment, this is just the path
 }
+
+function getYoutubeEmbedUrl($url) {
+    if (empty($url)) return null;
+    
+    // Pattern to extract video ID from various YouTube URL formats
+    $pattern = '/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/i';
+    
+    if (preg_match($pattern, $url, $matches)) {
+        return "https://www.youtube.com/embed/" . $matches[1];
+    }
+    
+    return null;
+}

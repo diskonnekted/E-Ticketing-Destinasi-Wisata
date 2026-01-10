@@ -43,6 +43,27 @@
                 }
                 </script>
 
+                <!-- YouTube Video Section (Optional) -->
+                <?php if (!empty($product['youtube_url'])): 
+                    $embedUrl = getYoutubeEmbedUrl($product['youtube_url']);
+                    if ($embedUrl):
+                ?>
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden p-4">
+                    <h2 class="text-xl font-bold text-gray-900 mb-4 border-b pb-2">
+                        <?= trans('Video Preview', 'Video Preview') ?>
+                    </h2>
+                    <div class="aspect-w-16 aspect-h-9 relative" style="padding-bottom: 56.25%;">
+                        <iframe class="absolute top-0 left-0 w-full h-full rounded-lg" 
+                                src="<?= $embedUrl ?>" 
+                                title="YouTube video player" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+                <?php endif; endif; ?>
+
                 <!-- Product Title & Stats -->
                 <div class="bg-white rounded-lg shadow-lg p-6">
                     <div class="flex justify-between items-start">

@@ -46,6 +46,12 @@ if (!isset($content)) {
                     </div>
                 </div>
 
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Link Video YouTube (Opsional)</label>
+                    <input type="text" name="youtube_url" value="<?= $product['youtube_url'] ?? '' ?>" placeholder="https://www.youtube.com/watch?v=..." class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-teal-500 focus:border-teal-500 sm:text-sm border p-2">
+                    <p class="mt-1 text-xs text-gray-500">Masukkan link lengkap YouTube. Video tidak akan ditampilkan jika kosong.</p>
+                </div>
+
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                         <label class="block text-sm font-medium text-gray-700">Deskripsi (Inggris)</label>
