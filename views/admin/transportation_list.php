@@ -1,4 +1,10 @@
-<?php include 'views/layouts/admin_layout.php'; ?>
+<?php
+if (!isset($content)) {
+    $content = __FILE__;
+    require 'views/layouts/admin_layout.php';
+    exit;
+}
+?>
 
 <div class="mb-6 flex justify-between items-center">
     <h1 class="text-3xl font-bold text-gray-800">Manajemen Transportasi</h1>

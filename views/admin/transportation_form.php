@@ -1,4 +1,10 @@
-<?php include 'views/layouts/admin_layout.php'; ?>
+<?php
+if (!isset($content)) {
+    $content = __FILE__;
+    require 'views/layouts/admin_layout.php';
+    exit;
+}
+?>
 
 <div class="max-w-4xl mx-auto">
     <div class="mb-6">
