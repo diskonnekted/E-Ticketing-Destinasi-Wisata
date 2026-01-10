@@ -50,6 +50,14 @@ switch ($page) {
         require 'controllers/auth_controller.php';
         break;
 
+    case 'admin_transportation':
+        require 'controllers/admin_transportation_controller.php';
+        break;
+
+    case 'transportation_detail':
+        require 'controllers/transportation_detail_controller.php';
+        break;
+
     case 'logout':
         session_destroy();
         redirect('index.php');
@@ -123,6 +131,10 @@ switch ($page) {
 
     case 'souvenir':
         require 'controllers/souvenir_controller.php';
+        break;
+
+    case 'transportation':
+        require 'controllers/transportation_controller.php';
         break;
 
     case 'map':

@@ -81,6 +81,7 @@
                                 <div class="px-4 py-2 text-xs font-semibold text-gray-400 uppercase tracking-wider">Kuliner</div>
                                 <a href="index.php?page=culinary" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-teal-600">Kuliner Legendaris</a>
                                 <a href="index.php?page=souvenir" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-teal-600">Oleh-oleh & Souvenir</a>
+                                <a href="index.php?page=transportation" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-teal-600">Jasa Transportasi</a>
                             </div>
                         </div>
                     </div>

@@ -45,6 +45,10 @@
                     <i class="fas fa-gift w-6 mr-2 text-center"></i>
                     Manajemen Souvenir
                 </a>
+                <a href="index.php?page=admin_transportation" class="flex items-center px-3 py-2 text-sm font-medium rounded-md group hover:bg-gray-50 hover:text-teal-600 <?= $page === 'admin_transportation' ? 'sidebar-active' : 'text-gray-700' ?>">
+                    <i class="fas fa-bus w-6 mr-2 text-center"></i>
+                    Manajemen Transportasi
+                </a>
                 <a href="index.php?page=operator" class="flex items-center px-3 py-2 text-sm font-medium rounded-md group hover:bg-gray-50 hover:text-teal-600">
                     <i class="fas fa-qrcode w-6 mr-2 text-center"></i>
                     POS Scanner
