@@ -38,6 +38,10 @@ switch ($page) {
         require 'controllers/checkout_controller.php';
         break;
 
+    case 'payment':
+        require 'controllers/payment_controller.php';
+        break;
+
     case 'login':
         require 'controllers/auth_controller.php';
         break;
@@ -56,13 +60,42 @@ switch ($page) {
         require 'views/admin/dashboard.php';
         break;
 
+    case 'admin_accommodation':
+        require 'controllers/admin_accommodation_controller.php';
+        break;
+
     case 'admin_products':
         require 'controllers/admin_product_controller.php';
+        break;
+
+    case 'admin_culinary':
+        require 'controllers/admin_culinary_controller.php';
+        break;
+
+    case 'admin_souvenir':
+        require 'controllers/admin_souvenir_controller.php';
         break;
 
     case 'operator':
         if (!isOperator()) redirect('index.php?page=login');
         require 'views/admin/pos.php';
+        break;
+
+    case 'monitor':
+        if (!isMonitor()) redirect('index.php?page=login');
+        require 'controllers/monitor_controller.php';
+        break;
+
+    case 'accommodation':
+        require 'controllers/accommodation_controller.php';
+        break;
+
+    case 'accommodation_detail':
+        require 'controllers/accommodation_detail_controller.php';
+        break;
+
+    case 'culinary':
+        require 'controllers/culinary_controller.php';
         break;
 
     case 'ticket':
@@ -89,7 +122,15 @@ switch ($page) {
         break;
 
     case 'souvenir':
-        require 'views/mobile/souvenir.php';
+        require 'controllers/souvenir_controller.php';
+        break;
+
+    case 'map':
+        require 'controllers/map_controller.php';
+        break;
+
+    case 'destination':
+        require 'controllers/destination_controller.php';
         break;
 
     case 'disclaimer':

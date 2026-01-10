@@ -1,6 +1,21 @@
 </main>
 <footer class="bg-gray-800 text-white pt-10 pb-6">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- DEVELOPMENT WARNING -->
+        <div class="bg-red-600 border-l-4 border-yellow-400 text-white p-4 mb-8 rounded shadow-lg animate-pulse" role="alert">
+            <div class="flex items-center">
+                <div class="py-1"><i class="fas fa-exclamation-triangle text-3xl mr-4 text-yellow-300"></i></div>
+                <div>
+                    <p class="font-bold text-lg uppercase tracking-wider">PERINGATAN PENGEMBANGAN / DEVELOPMENT WARNING</p>
+                    <p class="text-sm font-medium mt-1">
+                        Website ini masih dalam tahap pengembangan (Under Construction). 
+                        <span class="underline decoration-yellow-400 decoration-2 underline-offset-2">DILARANG MELAKUKAN TRANSAKSI APAPUN</span> melalui website ini.
+                    </p>
+                </div>
+            </div>
+        </div>
+
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
                 <img src="img/logo.jpg" alt="Hollynice Logo" class="h-12 w-auto mb-4 rounded">

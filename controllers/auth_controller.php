@@ -19,6 +19,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 redirect('index.php?page=admin');
             } elseif ($user['role'] == 'operator') {
                 redirect('index.php?page=operator');
+            } elseif ($user['role'] == 'monitor') {
+                redirect('index.php?page=monitor');
             } else {
                 redirect('index.php');
             }

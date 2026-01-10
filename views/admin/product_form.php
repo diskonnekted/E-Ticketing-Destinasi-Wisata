@@ -1,4 +1,10 @@
-<?php require 'views/layouts/header.php'; ?>
+<?php
+if (!isset($content)) {
+    $content = __FILE__;
+    require 'views/layouts/admin_layout.php';
+    exit;
+}
+?>
 
 <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <div class="mb-6">
@@ -303,5 +309,4 @@
         typeSelect.addEventListener('change', updateFields);
     });
 </script>
-
-<?php require 'views/layouts/footer.php'; ?>
+</div>

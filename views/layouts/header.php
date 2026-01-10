@@ -63,20 +63,30 @@
                         </div>
                     </div>
 
-                    <!-- Cindera Mata -->
+                    <!-- Penginapan & Kuliner -->
                     <div class="relative group">
                         <button class="text-gray-500 group-hover:text-teal-600 px-3 py-2 rounded-md text-sm font-medium inline-flex items-center outline-none">
-                            <span><?= trans('Souvenirs', 'Cindera Mata') ?></span>
+                            <span><?= trans('Accommodations & Culinary', 'Penginapan & Kuliner') ?></span>
                             <svg class="ml-2 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
                             </svg>
                         </button>
                         <div class="absolute right-0 mt-0 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none hidden group-hover:block z-50">
                             <div class="py-1">
-                                <a href="index.php?page=souvenir" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-teal-600"><?= trans('Souvenirs', 'Souvenir') ?></a>
+                                <div class="px-4 py-2 text-xs font-semibold text-gray-400 uppercase tracking-wider">Penginapan</div>
+                                <a href="index.php?page=accommodation&type=hotel" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-teal-600">Hotel</a>
+                                <a href="index.php?page=accommodation&type=homestay" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-teal-600">Homestay</a>
+                                <a href="index.php?page=accommodation&type=villa" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-teal-600">Villa</a>
+                                <div class="border-t border-gray-100 my-1"></div>
+                                <div class="px-4 py-2 text-xs font-semibold text-gray-400 uppercase tracking-wider">Kuliner</div>
+                                <a href="index.php?page=culinary" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-teal-600">Kuliner Legendaris</a>
+                                <a href="index.php?page=souvenir" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-teal-600">Oleh-oleh & Souvenir</a>
                             </div>
                         </div>
                     </div>
+
+                    <!-- Peta Destinasi -->
+                    <a href="index.php?page=map" class="text-gray-900 hover:text-teal-600 px-3 py-2 rounded-md text-sm font-medium"><?= trans('Destination Map', 'Peta Destinasi') ?></a>
 
                     <!-- Info -->
                     <div class="relative group">

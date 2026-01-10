@@ -1,4 +1,10 @@
-<?php require 'views/layouts/header.php'; ?>
+<?php
+if (!isset($content)) {
+    $content = __FILE__;
+    require 'views/layouts/admin_layout.php';
+    exit;
+}
+?>
 
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <div class="flex justify-between items-center mb-6">
@@ -58,5 +64,3 @@
         </table>
     </div>
 </div>
-
-<?php require 'views/layouts/footer.php'; ?>

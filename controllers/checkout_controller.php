@@ -18,10 +18,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $pdo->beginTransaction();
 
         $paymentMethod = $_POST['payment_method'] ?? 'qris';
+        if ($paymentMethod === 'va' && isset($_POST['va_bank'])) {
+            $paymentMethod = 'va_' . $_POST['va_bank'];
+        }
 
         // 1. Create Order
         $stmt = $pdo->prepare("INSERT INTO orders (user_id, total_amount, status, payment_method, transaction_id) VALUES (?, ?, ?, ?, ?)");
-        $stmt->execute([$_SESSION['user_id'], $total, 'paid', $paymentMethod, 'TXN-' . time()]); // Auto-paid for demo
+        $stmt->execute([$_SESSION['user_id'], $total, 'pending', $paymentMethod, 'TXN-' . time()]); // Pending payment
         $orderId = $pdo->lastInsertId();
 
         // 2. Create Items & Tickets
@@ -33,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Generate Tickets
             for ($i = 0; $i < $item['quantity']; $i++) {
                 $ticketCode = strtoupper(uniqid('TIX-'));
-                $stmtTicket = $pdo->prepare("INSERT INTO tickets (order_item_id, ticket_code) VALUES (?, ?)");
+                $stmtTicket = $pdo->prepare("INSERT INTO tickets (order_item_id, ticket_code, status) VALUES (?, ?, 'pending_payment')");
                 $stmtTicket->execute([$itemId, $ticketCode]);
             }
         }
@@ -41,11 +44,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $pdo->commit();
         unset($_SESSION['cart']);
         
-        // Redirect to success page showing tickets
-        // For simplicity, I'll redirect to a generic "My Tickets" or the specific order view.
-        // Let's create a success view or just redirect to home with message.
-        // Better: Redirect to a 'tickets' page.
-        header("Location: index.php?page=ticket&order_id=$orderId");
+        // Redirect to Payment Page
+        header("Location: index.php?page=payment&id=$orderId");
         exit;
 
     } catch (Exception $e) {

@@ -61,6 +61,17 @@
                 <!-- Virtual Account Content -->
                 <div id="va-content" class="payment-details hidden">
                     <div class="bg-gray-50 p-6 rounded-lg border border-gray-200 space-y-4">
+                        
+                        <!-- Bank Jateng Option -->
+                        <div class="flex items-center p-3 bg-white rounded border border-gray-200 cursor-pointer hover:border-teal-500 ring-2 ring-teal-500">
+                            <img src="https://www.bankjateng.co.id/assets/img/logo.png" class="h-8 w-auto mr-4" alt="Bank Jateng">
+                            <div class="flex-1">
+                                <p class="font-bold text-sm">Bank Jateng Lakupandai</p>
+                                <p class="text-xs text-gray-500">Simulasi Pembayaran API</p>
+                            </div>
+                            <input type="radio" name="va_bank" value="bank_jateng" checked class="text-teal-600">
+                        </div>
+
                         <div class="flex items-center p-3 bg-white rounded border border-gray-200 cursor-pointer hover:border-teal-500">
                             <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Bank_Central_Asia.svg" class="h-6 w-auto mr-4">
                             <div class="flex-1">

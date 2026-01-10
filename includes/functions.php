@@ -22,6 +22,10 @@ function isOperator() {
     return isset($_SESSION['role']) && ($_SESSION['role'] == 'operator' || $_SESSION['role'] == 'admin');
 }
 
+function isMonitor() {
+    return isset($_SESSION['role']) && ($_SESSION['role'] == 'monitor' || $_SESSION['role'] == 'admin');
+}
+
 function redirect($path) {
     header("Location: $path");
     exit;
