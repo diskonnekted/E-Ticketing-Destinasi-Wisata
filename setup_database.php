@@ -2,6 +2,7 @@
 require 'config/db.php';
 
 echo "<h1>Database Setup</h1>";
+echo "<p>Connected to database: <strong>" . $db . "</strong></p>";
 
 try {
     // 1. Table: Accommodations
